@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little World for Lidia ♡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+--pink:#e9a9b9;
+--wine:#79384f;
+--cream:#fffaf5;
+--muted:#a77a85;
+}
+
+body{
+background:var(--cream);
+color:var(--wine);
+font-family:'DM Sans',sans-serif;
+overflow-x:hidden;
+}
+
+.page{
+display:none;
+min-height:100vh;
+padding:45px 23px;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+position:relative;
+overflow:hidden;
+background:
+radial-gradient(ellipse at 10% 15%,#f9e4e9 0%,transparent 45%),
+radial-gradient(ellipse at 90% 85%,#f4dce4 0%,transparent 45%),
+var(--cream);
+animation:fade .7s ease;
+}
+
+.page.active{display:flex}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(12px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+.content{
+position:relative;
+z-index:2;
+width:100%;
+max-width:560px;
+text-align:center;
+}
+
+.eyebrow{
+font-size:10px;
+letter-spacing:4px;
+text-transform:uppercase;
+color:var(--muted);
+margin-bottom:25px;
+}
+
+h1,h2{
+font-family:'Playfair Display',serif;
+font-weight:400;
+}
+
+h1{
+font-size:clamp(38px,9vw,66px);
+line-height:1.12;
+margin-bottom:20px;
+}
+
+h1 em{color:#c77c95}
+
+p{
+font-size:15px;
+line-height:2;
+color:#85616d;
+margin:14px auto;
+max-width:450px;
+}
+
+.line{
+width:55px;
+height:1px;
+background:#d6a1b0;
+margin:25px auto;
+}
+
+button{
+font-family:'DM Sans',sans-serif;
+background:var(--wine);
+color:white;
+border:1px solid var(--wine);
+padding:15px 28px;
+border-radius:50px;
+font-size:12px;
+letter-spacing:1px;
+margin-top:25px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#a55270;
+transform:translateY(-3px);
+}
+
+.ghost{
+background:transparent;
+color:var(--wine);
+}
+
+.symbol{
+font-size:38px;
+margin-bottom:25px;
+color:#cb829a;
+}
+
+.card{
+background:#ffffffb8;
+border:1px solid #efdce1;
+border-radius:22px;
+padding:28px 22px;
+margin:20px auto;
+box-shadow:0 15px 45px #9b536018;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+margin:25px auto;
+max-width:460px;
+}
+
+.photo{
+background:white;
+padding:9px 9px 25px;
+box-shadow:0 8px 25px #8a53601c;
+transform:rotate(-3deg);
+}
+
+.photo:nth-child(2){transform:rotate(3deg)}
+.photo:nth-child(3){
+grid-column:span 2;
+width:75%;
+margin:auto;
+transform:rotate(-1deg);
+}
+
+.photo img{
+width:100%;
+height:180px;
+object-fit:cover;
+display:block;
+}
+
+.photo small{
+display:block;
+margin-top:10px;
+font-family:'Playfair Display',serif;
+color:#986b7a;
+}
+
+.reason{
+background:#fff;
+border:1px solid #f0dfe4;
+border-radius:15px;
+padding:18px;
+margin:12px 0;
+text-align:left;
+display:flex;
+gap:14px;
+align-items:center;
+box-shadow:0 5px 20px #a15b7010;
+}
+
+.reason span{font-size:23px}
+.reason p{margin:0;font-size:14px}
+
+.final{
+font-family:'Playfair Display',serif;
+font-size:22px;
+font-style:italic;
+line-height:1.8;
+color:#8a455e;
+}
+
+.footer{
+font-size:10px;
+letter-spacing:2px;
+margin-top:35px;
+color:#b18b98;
+}
+
+.petals{
+position:fixed;
+top:-30px;
+font-size:17px;
+color:#dca1b1;
+opacity:.5;
+animation:fall 10s linear infinite;
+pointer-events:none;
+z-index:1;
+}
+
+@keyframes fall{
+to{transform:translateY(110vh) rotate(360deg)}
+}
+
+@media(max-width:380px){
+h1{font-size:36px}
+.card{padding:22px 17px}
+.photo img{height:145px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="petals" style="left:12%;animation-delay:0s">✿</div>
+<div class="petals" style="left:35%;animation-delay:3s">♡</div>
+<div class="petals" style="left:70%;animation-delay:1s">✿</div>
+<div class="petals" style="left:90%;animation-delay:5s">♡</div>
+
+<!-- PAGE 1 -->
+<section class="page active" id="p1">
+<div class="content">
+<div class="symbol">♡</div>
+<div class="eyebrow">A little something, just for you</div>
+<h1>To my <em>Princess</em></h1>
+<div class="line"></div>
+<p>
+Some people make ordinary days feel a little more beautiful.
+This little corner of the internet is dedicated to one of them.
+</p>
+<p>And yes, it's all for you, Lidia.</p>
+<button onclick="go(2)">Open your little surprise →</button>
+<div class="footer">MADE WITH LOVE · BY AARAV</div>
+</div>
+</section>
+
+<!-- PAGE 2 -->
+<section class="page" id="p2">
+<div class="content">
+<div class="eyebrow">A letter from me to you</div>
+<h1>Dear <em>Lidia,</em></h1>
+<div class="card">
+<p>
+I don't think words can always explain how much a person means to us.
+Sometimes it's just the little conversations, random laughs,
+and moments that stay in our minds.
+</p>
+<p>
+I wanted to make something different for you.
+Not because I needed a reason, but because you deserve
+to feel appreciated.
+</p>
+<p>
+So here's a tiny reminder that you're genuinely special.
+Never change the lovely parts of yourself.
+</p>
+</div>
+<button onclick="go(3)">A few memories →</button>
+</div>
+</section>
+
+<!-- PAGE 3: YOUR THREE PHOTOS -->
+<section class="page" id="p3">
+<div class="content">
+<div class="eyebrow">Little moments, big memories</div>
+<h1>Our little <em>gallery</em></h1>
+<p>Some moments are worth keeping a little closer.</p>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="IMG_20261116_152936.jpg" alt="Memory one">
+<small>A moment to remember ♡</small>
+</div>
+
+<div class="photo">
+<img src="IMG-20261118-WA0013.jpg" alt="Memory two">
+<small>One for the memories ♡</small>
+</div>
+
+<div class="photo">
+<img src="IMG-20261118-WA0008.jpg" alt="Memory three">
+<small>Something worth keeping ♡</small>
+</div>
+
+</div>
+
+<button onclick="go(4)">Keep reading →</button>
+</div>
+</section>
+
+<!-- PAGE 4 -->
+<section class="page" id="p4">
+<div class="content">
+<div class="eyebrow">The little things</div>
+<h1>Things I <em>adore</em></h1>
+<p>It's not just one thing. It's all the little things together.</p>
+
+<div class="card">
+<div class="reason"><span>🌷</span><p>Your personality and the way you are.</p></div>
+<div class="reason"><span>♡</span><p>The little conversations that make my day.</p></div>
+<div class="reason"><span>✨</span><p>The way you make ordinary moments memorable.</p></div>
+<div class="reason"><span>🌸</span><p>Your smile and all the happiness behind it.</p></div>
+<div class="reason"><span>🦋</span><p>Simply being yourself, without trying to be anyone else.</p></div>
+</div>
+
+<button onclick="go(5)">One last page →</button>
+</div>
+</section>
+
+<!-- PAGE 5 -->
+<section class="page" id="p5">
+<div class="content">
+<div class="symbol">♡</div>
+<div class="eyebrow">The last little note</div>
+<h1>Happy Princess <em>Day.</em></h1>
+
+<div class="card">
+<p class="final">
+"If I could wish one thing for you,
+it would be that life gives you
+as many reasons to smile
+as you give to the people around you."
+</p>
+
+<div class="line"></div>
+
+<p>
+Keep smiling, keep dreaming, and never forget
+how wonderful it is to be you.
+</p>
+
+<h2 style="margin-top:25px;font-size:25px">With love,</h2>
+<h2 style="font-size:30px;color:#b75f7e">Aarav ♡</h2>
+</div>
+
+<p>Made especially for you, Lidia.</p>
+<button onclick="go(1)" class="ghost">↶ Read it all again</button>
+<div class="footer">A LITTLE WORLD · JUST FOR YOU</div>
+</div>
+</section>
+
+<script>
+function go(n){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById('p'+n).classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>
